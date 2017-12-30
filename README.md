@@ -3,30 +3,34 @@ Distributed computing and storage architecture project
 
 Copyright ©VUB - Distributed computing and storage architecture course 2017.
 
-Authors: 
-- Ahmed K. A Abdullah @github/antemooo. 
-- Rencong Tang @github/rencongtang.
+**Authors:** 
+- **Ahmed K. A Abdullah @github/antemooo.**
+- **Rencong Tang @github/rencongtang.**
 
 
 An example to deploy end-to-end big data harvesting. 
 
 The data will be processed later in Hadoop cluster through a simple Map-Reduce program to count the 10 maximum words in a chunk of tweets and hashtags.
 
+**The example is written and tested with Python 3.5**
+
 --------------------------------------------------------------------------------------------
 
-
-## To setup the dependencies : 
----------------------------
+-----------------------------
+## To setup the dependencies: 
+-----------------------------
 
 `pip3 install -r requirements.txt`
 
 OR
 
-`pip3 install -r requirements.txt`
+`pip install -r requirements.txt`
 
 --------------------------------------------------------------------------------------------
+
+----------
 ## main.py
-----------------
+----------
 
 A full example is established.
 
@@ -46,7 +50,7 @@ The script will produce 3 .txt files:
 
 - Hashtagoutput.txt: contains per-line hashtags collected out of the tweets
 
-
+-------------------
 ## TwitterStream.py
 -------------------
 
@@ -64,7 +68,7 @@ The main class should be initialised with:
 
 A well explained example of how to obtain these keys, can be found [here](http://docs.inboundnow.com/guide/create-twitter-application/).
 
-
+--------------------
 ###### fetchsamples:
 --------------------
 The main method to collect data from the api.
@@ -84,7 +88,7 @@ This one yeild tweets from a specific location in US and only tweets in English.
 
 For further information check Twitter developers documentation [here](https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter.html).
 
-
+--------------------
 ###### clean_tweets:
 --------------------
 A method to clean the collected tweets.
@@ -103,9 +107,9 @@ The method takes:
       It will also make a new output file called CleanTweets.txt.
       Then it will store the data in a list and return a list as output.
 
-
+--------------------
 ## TweetsCleaner.py
--------------------
+--------------------
 
 A simple script that contains different method to extract only useful data from tweets.
 
@@ -113,7 +117,7 @@ Some of these methods are wrappers for other methods from the [NLTK](http://www.
 
 The script itself is well documented and each method has a comment explaining the functionality.
 
-
+-----------------
 ## map_reduce.py
 -----------------
 
