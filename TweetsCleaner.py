@@ -2,6 +2,7 @@ from nltk.tokenize import TweetTokenizer
 import re
 from string import punctuation
 from nltk.corpus import stopwords
+from nltk.stem.lancaster import LancasterStemmer
 
 '''This script is a helper script used to clean TwitterData'''
 
@@ -43,3 +44,15 @@ def remove_stop_words_and_punctuation(tweet):
             if word.isalpha()
             and word.lower() not in english_stopwords
             and word.translate(translator) != '']
+
+'''
+stemming method.
+Takes a list of splitted tweet words.
+st.stem(word): process for reducing derived words to their stem, or root form.
+E.g. ‘developed’, ‘development’, ‘developing’ are reduced to the stem ‘develop’.
+returns a new list of stemmed tweet
+'''
+def stemming(tweet):
+    st = LancasterStemmer()
+    return [st.stem(word) for word in tweet]
+
