@@ -5,11 +5,19 @@ import re
 # regular expression that used to process the words (all the words in general)
 WORD_RE = re.compile(r"[\w']+")
 
+'''
+A Map-Reduce class that inherits MRjob class
+This simple map reduce program is made to count the maximum 10 used words in a file.
 
+Steps : a method to map the map reuce functions to to mappers, combiners and reducers in the base class.
+        When the program starts, steps will be processed sequentially.
+        In our program we define Mapper, Combiner and Reducer for the first step.
+        We define a second Reducer for the 2nd step
+
+The mapper, combiner and reducer are explained inline.
+'''
 class MRMostUsedWord(MRJob):
-    # defining the steps of MRjob class by overriding the method.
-    # different mappers and combiners can be defined.
-    # we will be using mapper, combiner and 2 reducer (intermediate and final)
+
     def steps(self):
         return [
             MRStep(mapper=self.mapper_get_words,
@@ -35,6 +43,7 @@ class MRMostUsedWord(MRJob):
         yield None, (sum(counts), word)
 
     # discard the key; it is just None
+    # This is helpful to handle data as one block
     def reducer_find_max_10_word(self, _, word_count_pairs):
         # each item of word_count_pairs is (num_occurrences, word).
         # we create a list of all pairs
