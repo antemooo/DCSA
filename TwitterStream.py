@@ -76,7 +76,7 @@ class TwitterStream:
 
 
         #FetchSamples is connecting to Twitter Stream API and fetching Tweets & HashTags
-        #Url with flitering symbols should be specified
+        #Url with filtering symbols should be specified
         #numberoftweets is the number of tweets wanted before terminating
     def fetchsamples(self,url,numberoftweets,parameters = []):
         self.tweets = open('Tweetoutput.txt', 'a')
@@ -118,7 +118,7 @@ class TwitterStream:
       (optionally) tweets input file.
       (optionally) text output file. 
       NOTE: 
-      If no imput or output files specified.
+      If no input or output files specified.
       it will open the file from the class that is created in FetchSamples method.
       Then it will store the data in a list and return a list as output
       '''

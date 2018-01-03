@@ -9,9 +9,9 @@ from nltk.stem.lancaster import LancasterStemmer
 
 '''
 Tokenize_Tweet method is a method that is casting TweetTokenizer package to tokenize tweets
-Takes a string tweet sentance
+Takes a string tweet sentence
 removes all users name and links
-splits the sentance into a list of words and punctuation
+splits the sentence into a list of words and punctuation
 returns the list
 '''
 def tokenize_tweet(tweet):
@@ -19,9 +19,9 @@ def tokenize_tweet(tweet):
     return tknzr.tokenize(tweet)
 
 '''
-Helper method to remoce URLs using regular expressions.
+Helper method to remove URLs using regular expressions.
 It is aware of http/https.
-Takes a string tweet sentance
+Takes a string tweet sentence
 return string tweet without URLs
 '''
 def remove_urls(tweet):
@@ -30,7 +30,7 @@ def remove_urls(tweet):
 '''
 remove_stop_words_and_punctuation method.
 Takes a list of splitted tweet words.
-Rempves the punctuation as specified in String class.
+Removes the punctuation as specified in String class.
 Removes all words contains digits through isAlpha method.
 remove all stop words defined in NLTK.CORPUS stopwords.
 Returns a new list of clean tweets.
@@ -48,7 +48,7 @@ def remove_stop_words_and_punctuation(tweet):
 '''
 stemming method.
 Takes a list of splitted tweet words.
-st.stem(word): process for reducing derived words to their stem, or root form.
+st.stem(word): a process for reducing derived words to their stem, or root form.
 E.g. ‘developed’, ‘development’, ‘developing’ are reduced to the stem ‘develop’.
 returns a new list of stemmed tweet
 '''
